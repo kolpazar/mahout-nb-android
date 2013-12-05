@@ -1,55 +1,51 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <Button
-        android:id="@+id/buttonLoadModel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="Load model" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
-    <Button
-        android:id="@+id/buttonLoadData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonLoadModel"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Load data file" />
+        <Button
+            android:id="@+id/buttonClassify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test classifier" />
 
-    <Button
-        android:id="@+id/buttonClassify"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonLoadData"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Test classifier" />
+        <Button
+            android:id="@+id/buttonClassifyRandom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Classify randomly" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonClassifyRandom"
-        android:layout_width="wrap_content"
+    <CheckBox
+        android:id="@+id/checkClassifySensor"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonClassify"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        android:text="Classify randomly" />
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:text="Classify sensor data" />
 
     <TextView
         android:id="@+id/textResult"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/buttonClassifyRandom"
-        android:layout_marginTop="20dp" />
+        android:layout_height="wrap_content" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/textSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
+
+</LinearLayout>

@@ -42,6 +42,15 @@ public class NaiveBayesClassifier {
 		return s;
 	}
 
+	public String classify(Dataset data, Row row) {
+		String s = "Classified as: ";
+		Vector r = model.createScoringVector();
+		r = classifyFull(r, row.getFeatures());
+		int classifiedLabel = (r.get(0) >= r.get(1)) ? 0 : 1;
+		s += data.getLabelByIndex(classifiedLabel);
+		return s;
+	}
+
 	protected NaiveBayesModel getModel() {
 		return model;
 	}

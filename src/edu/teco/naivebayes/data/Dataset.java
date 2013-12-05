@@ -62,7 +62,7 @@ public class Dataset {
 		return result;
 	}
 	
-	private double calculateAverage(double[] values, int index, int length) {
+	private static double calculateAverage(double[] values, int index, int length) {
 		double result = 0;
 		for (int i = index; i < index + length; i++) {
 			result += values[i];
@@ -70,7 +70,7 @@ public class Dataset {
 		return result / length;
 	}
 	
-	private double calculateVariance(double[] values, int index, int length) {
+	private static double calculateVariance(double[] values, int index, int length) {
 		double result = 0;
 		double average = calculateAverage(values, index, length);
 		for (int i = index; i < index + length; i++) {
@@ -89,5 +89,17 @@ public class Dataset {
 	
 	public String getLabelByIndex(int index) {
 		return labels.get(index);
+	}
+
+	public static Row createRow(double ax, double ay, double az, double gx,
+			double gy, double gz, double ox, double oy, double oz) {
+		Row row = new Row(6);
+		row.setFeature(0, calculateAverage(new double[]{ax, ay, az}, 0, 3));
+		row.setFeature(0, calculateAverage(new double[]{gx, gy, gz}, 0, 3));
+		row.setFeature(0, calculateAverage(new double[]{ox, oy, oz}, 0, 3));
+		row.setFeature(3, calculateVariance(new double[]{ax, ay, az}, 0, 3));
+		row.setFeature(4, calculateVariance(new double[]{gx, gy, gz}, 0, 3));
+		row.setFeature(5, calculateVariance(new double[]{ox, oy, oz}, 0, 3));
+		return row;
 	}
 }
