@@ -95,8 +95,8 @@ public class Dataset {
 			double gy, double gz, double ox, double oy, double oz) {
 		Row row = new Row(6);
 		row.setFeature(0, calculateAverage(new double[]{ax, ay, az}, 0, 3));
-		row.setFeature(0, calculateAverage(new double[]{gx, gy, gz}, 0, 3));
-		row.setFeature(0, calculateAverage(new double[]{ox, oy, oz}, 0, 3));
+		row.setFeature(1, calculateAverage(new double[]{gx, gy, gz}, 0, 3));
+		row.setFeature(2, calculateAverage(new double[]{ox, oy, oz}, 0, 3));
 		row.setFeature(3, calculateVariance(new double[]{ax, ay, az}, 0, 3));
 		row.setFeature(4, calculateVariance(new double[]{gx, gy, gz}, 0, 3));
 		row.setFeature(5, calculateVariance(new double[]{ox, oy, oz}, 0, 3));

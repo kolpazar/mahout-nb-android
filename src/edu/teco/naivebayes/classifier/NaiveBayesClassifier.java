@@ -48,7 +48,7 @@ public class NaiveBayesClassifier {
 		r = classifyFull(r, row.getFeatures());
 		int classifiedLabel = (r.get(0) >= r.get(1)) ? 0 : 1;
 		s += data.getLabelByIndex(classifiedLabel);
-		return s;
+		return s + " " + r.toString();
 	}
 
 	protected NaiveBayesModel getModel() {
